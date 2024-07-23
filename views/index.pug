@@ -2,7 +2,12 @@ doctype html
 link(rel='stylesheet', href='/styles.css')
 block content
   .container
+    .sidebar-toggle(onclick='toggleSidebar()') ☰ Menu
     include partials/sidebar.pug
     main.content
       div.greeting= message
       include partials/table.pug
+script.
+  function toggleSidebar() {
+    document.querySelector('.sidebar').classList.toggle('active');
+  }

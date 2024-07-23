@@ -10,7 +10,18 @@ body {
   height: 100%;
   background-color: #EEEEEE;
 }
-
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #5932EA;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 .sidebar {
   width: 312px;
   height: 100vh;
@@ -21,6 +32,8 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
+
 
 .content {
   flex: 1;
@@ -236,4 +249,47 @@ div.pagination-element.active{
     height: 46px;
     background-color: #5932EA;
     border-radius: 5px;
+}
+
+
+@media (min-width: 480px) {
+    .sidebar {
+      display: none;
+      position: fixed;
+      
+      width: 250px;
+      height: 100vh;
+      z-index: 999;
+      background-color: #f4f4f4;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .sidebar.active {
+      display: flex;
+    }
+    
+    .content {
+      flex: 1;
+      padding: 20px;
+      margin-left: 0;
+    }
+    
+    .sidebar-toggle {
+      display: block;
+    }
+    .customer-table th,
+    .customer-table td {
+      padding: 8px 10px;
+    }
+  }
+
+  @media (min-width: 1240px){
+    .sidebar-toggle {
+        display: none;
+        
+    }
+    .sidebar {
+        display: flex;
+        position:relative;
+    }
 }
