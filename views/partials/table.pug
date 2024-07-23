@@ -1,10 +1,12 @@
 div.customer-table
   div.table-header
     div.table-description
-        div All Customers
-        div Active members
+      div.title All Customers
+      div.info Active members
     div.table-search
-        div.searchbox All Customers
+      div.searchbox
+        img(src='/icons/search.svg', alt='Dashboard')
+        div.searchbox-description Search
   table.customer-table
     thead
       tr
@@ -14,4 +16,23 @@ div.customer-table
       each customer in customers
         tr
           each key in Object.keys(customer)
-            td.customer-table-cell= customer[key]
+            if key === 'status'
+              if customer[key] === "Active"
+                td.customer-table-cell
+                  div.status.active= customer[key]
+              if customer[key] === "Inactive"
+                td.customer-table-cell
+                  div.status.inactive= customer[key]
+            else
+              td.customer-table-cell= customer[key]
+  div.pagination
+    div.pagination-element
+        img(src='/icons/arrow-left.svg', alt='Dashboard')
+    div.pagination-element.active 1
+    div.pagination-element 2
+    div.pagination-element 3
+    div.pagination-element 4
+    div.pagination-element.text ...
+    div.pagination-element 40
+    div.pagination-element
+        img(src='/icons/arrow-right.svg', alt='Dashboard')
