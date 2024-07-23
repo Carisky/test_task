@@ -1,0 +1,17 @@
+div.customer-table
+  div.table-header
+    div.table-description
+        div All Customers
+        div Active members
+    div.table-search
+        div.searchbox All Customers
+  table.customer-table
+    thead
+      tr
+        each key in Object.keys(customers[0])
+          th.customer-table-header= key.charAt(0).toUpperCase() + key.slice(1)
+    tbody
+      each customer in customers
+        tr
+          each key in Object.keys(customer)
+            td.customer-table-cell= customer[key]

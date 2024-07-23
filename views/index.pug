@@ -1,0 +1,8 @@
+doctype html
+link(rel='stylesheet', href='/styles.css')
+block content
+  .container
+    include partials/sidebar.pug
+    main.content
+      h1= message
+      include partials/table.pug
