@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.mjs",
-    "dev": "nodemon app.mjs"
+    "dev": "nodemon app.mjs",
+    "build-css": "sass ./public/styles.scss ./public/styles.css",
+    "watch-css": "sass --watch styles.scss:styles.css"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +17,7 @@
     "pug": "^3.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "sass": "^1.77.8"
   }
 }
